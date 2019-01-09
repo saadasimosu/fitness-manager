@@ -10,6 +10,10 @@ const navItems = [
     {
         name: 'programs',
         route: 'programs'
+    }, 
+    {
+        name: 'excercises',
+        route: 'excercises'
     }
 ]
 

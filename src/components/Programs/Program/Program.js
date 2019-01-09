@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Image, Icon } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
 import cyclingLogo from '../../../images/cycling.svg';
 import liftingLogo from '../../../images/lifting.svg';
 import runningLogo from '../../../images/running.svg';
