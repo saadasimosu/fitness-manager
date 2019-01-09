@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { excerciseTypes } from '../../constants';
 import { Grid } from 'semantic-ui-react';
 
-export class Excercises extends Component {
+export default class Excercises extends Component {
   render() {
     const numColumns = Object.keys(excerciseTypes).length;
 

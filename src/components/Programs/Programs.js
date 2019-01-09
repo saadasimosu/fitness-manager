@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { ProgramGroup } from './ProgramGroup/ProgramGroup';
+import ProgramGroup from './ProgramGroup/ProgramGroup';
 import { programTypes } from './../../constants';
 
-export class Programs extends Component {
+export default class Programs extends Component {
   programDetails = [
     {
       name: 'NSuns',

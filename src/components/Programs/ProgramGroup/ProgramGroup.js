@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Card } from 'semantic-ui-react';
-import { Program } from '../Program/Program';
+import Program from '../Program/Program';
 
-export class ProgramGroup extends Component {
+export default class ProgramGroup extends Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -20,7 +20,7 @@ const programTypeToColorMap = {
   [programTypes.SWIMMING]: 'blue'
 };
 
-export class Program extends Component {
+export default class Program extends Component {
   constructor(props) {
     super(props);
 
