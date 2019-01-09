@@ -3,43 +3,43 @@ import { Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const navItems = [
-    {
-        name: 'home',
-        route: '/'
-    }, 
-    {
-        name: 'programs',
-        route: 'programs'
-    }, 
-    {
-        name: 'excercises',
-        route: 'excercises'
-    }
+  {
+    name: 'home',
+    route: '/'
+  },
+  {
+    name: 'programs',
+    route: 'programs'
+  },
+  {
+    name: 'excercises',
+    route: 'excercises'
+  }
 ]
 
 export default class NavBar extends Component {
-    state = { activeItem: 'home' }
+  state = { activeItem: 'home' }
 
-    handleItemClick = (e, {name} ) => this.setState( {activeItem: name })
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-    render() {
-        const { activeItem } = this.state
+  render() {
+    const { activeItem } = this.state
 
-        return (
-            <Menu pointing secondary>
-                {navItems.map((navItem, index) => {
-                    return(
-                        <Menu.Item
-                            key={index}
-                            as={ Link }
-                            name={navItem.name}
-                            to={navItem.route}
-                            active={activeItem === navItem.name} 
-                            onClick={this.handleItemClick} 
-                        />
-                    )
-                })}
-            </Menu>
-        )
-    }
+    return (
+      <Menu pointing secondary>
+        {navItems.map((navItem, index) => {
+          return (
+            <Menu.Item
+              key={index}
+              as={Link}
+              name={navItem.name}
+              to={navItem.route}
+              active={activeItem === navItem.name}
+              onClick={this.handleItemClick}
+            />
+          )
+        })}
+      </Menu>
+    )
+  }
 }
