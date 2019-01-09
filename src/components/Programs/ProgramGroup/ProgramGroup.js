@@ -15,7 +15,7 @@ export class ProgramGroup extends Component {
             <Card.Group centered>
                 { this.state.programDetails.map((program, index) => {
                     return (
-                        <Program programName={program.name} programType={program.type} programDescription={program.description} />)
+                        <Program key={index} programName={program.name} programType={program.type} programDescription={program.description} />)
                 })}
             </Card.Group>
         );

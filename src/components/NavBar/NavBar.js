@@ -1,11 +1,20 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Home } from './../Home/Home';
-import { Programs } from './../Programs/Programs';
+import { Link } from 'react-router-dom';
+
+const navItems = [
+    {
+        name: 'home',
+        route: '/'
+    }, 
+    {
+        name: 'programs',
+        route: 'programs'
+    }
+]
 
 export default class NavBar extends Component {
-    state = { activeItem: 'programs' }
+    state = { activeItem: 'home' }
 
     handleItemClick = (e, {name} ) => this.setState( {activeItem: name })
 
@@ -13,29 +22,20 @@ export default class NavBar extends Component {
         const { activeItem } = this.state
 
         return (
-            <Router>
-                <Fragment>
-                    <Menu pointing secondary>
+            <Menu pointing secondary>
+                {navItems.map((navItem, index) => {
+                    return(
                         <Menu.Item
+                            key={index}
                             as={ Link }
-                            name='home'
-                            to='/'
-                            active={activeItem === 'home'} 
+                            name={navItem.name}
+                            to={navItem.route}
+                            active={activeItem === navItem.name} 
                             onClick={this.handleItemClick} 
                         />
-                        <Menu.Item
-                            as={ Link }
-                            name='programs'
-                            to='programs'
-                            active={activeItem === 'programs'}
-                            onClick={this.handleItemClick}
-                        />
-                    </Menu>
-
-                    <Route exact path ="/" component={Home} />
-                    <Route path ="/programs" component={Programs} />
-                </Fragment>
-            </Router>
+                    )
+                })}
+            </Menu>
         )
     }
 }
