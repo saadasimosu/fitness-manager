@@ -6,19 +6,23 @@ export class Programs extends Component {
     programDetails = [
         {
             name: 'NSuns',
-            type: programTypes.LIFTING
+            type: programTypes.LIFTING,
+            description: 'The 6 day NSuns Lifting Program'
         },
         {
             name: 'Couch to 5k',
-            type: programTypes.RUNNING
+            type: programTypes.RUNNING,
+            description: 'Get prepared for your first 5k'
         },
         {
             name: 'Learn to Swim',
-            type: programTypes.SWIMMING
+            type: programTypes.SWIMMING,
+            description: 'Learn how to swim'
         },
         {
             name: 'Tour de France',
-            type: programTypes.CYCLING
+            type: programTypes.CYCLING,
+            description: 'Literally Lance Armstrong'
         }
     ];
 

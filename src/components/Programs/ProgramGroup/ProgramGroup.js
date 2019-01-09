@@ -12,10 +12,10 @@ export class ProgramGroup extends Component {
 
     render() {
         return(
-            <Card.Group>
+            <Card.Group centered>
                 { this.state.programDetails.map((program, index) => {
                     return (
-                        <Program programName={program.name} programType={program.type} />)
+                        <Program programName={program.name} programType={program.type} programDescription={program.description} />)
                 })}
             </Card.Group>
         );
