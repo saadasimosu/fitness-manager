@@ -1,24 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Image } from 'semantic-ui-react';
-import cyclingLogo from '../../../images/cycling.svg';
-import liftingLogo from '../../../images/lifting.svg';
-import runningLogo from '../../../images/running.svg';
-import swimmingLogo from '../../../images/swimming.svg';
-import { programTypes } from '../../../constants';
-
-const programTypeToLogoMap = {
-  [programTypes.CYCLING]: cyclingLogo,
-  [programTypes.LIFTING]: liftingLogo,
-  [programTypes.RUNNING]: runningLogo,
-  [programTypes.SWIMMING]: swimmingLogo
-};
-
-const programTypeToColorMap = {
-  [programTypes.CYCLING]: 'purple',
-  [programTypes.LIFTING]: 'red',
-  [programTypes.RUNNING]: 'green',
-  [programTypes.SWIMMING]: 'blue'
-};
+import { programTypeToColorMap, programTypeToLogoMap } from '../../../constants';
 
 export default class Program extends Component {
   constructor(props) {
