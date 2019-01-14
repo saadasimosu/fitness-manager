@@ -12,8 +12,8 @@ const navItems = [
     route: 'programs'
   },
   {
-    name: 'excercises',
-    route: 'excercises'
+    name: 'exercises',
+    route: 'exercises'
   }
 ]
 

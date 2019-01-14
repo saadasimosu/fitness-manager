@@ -10,7 +10,7 @@ export const programTypes = {
   SWIMMING: 'swimming'
 };
 
-export const excerciseTypes = {
+export const exerciseTypes = {
   LIFTS: 'Lifts',
   BICYCLES: 'Bicycles',
   RUNS: 'Runs',

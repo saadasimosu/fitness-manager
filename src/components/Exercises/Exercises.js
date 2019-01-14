@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { excerciseTypes } from '../../constants';
+import { exerciseTypes } from '../../constants';
 import { Grid } from 'semantic-ui-react';
 import { programTypes } from '../../constants';
-import ExcerciseList from './ExcerciseList/ExcerciseList';
+import ExerciseList from './ExerciseList/ExerciseList';
 
-export default class Excercises extends Component {
-  excercises = [
+export default class Exercises extends Component {
+  exercises = [
     {
       name: 'Bench Press',
       type: programTypes.LIFTING,
@@ -43,20 +43,20 @@ export default class Excercises extends Component {
     }
   ];
 
-  getExcerciseByType(excercises, excerciseType) {
-    return excercises.filter(excercise => {
-      return excercise.type === excerciseType;
+  getExerciseByType(exercises, exerciseType) {
+    return exercises.filter(exercise => {
+      return exercise.type === exerciseType;
     });
   }
 
   render() {
-    const numColumns = Object.keys(excerciseTypes).length;
+    const numColumns = Object.keys(exerciseTypes).length;
 
     return (
       <Grid centered doubling stackable columns={numColumns}>
         <Grid.Row>
           {Object.values(programTypes).map((programType, index) => {
-            return(<ExcerciseList key={index} listType={programType} excerciseItems={this.getExcerciseByType(this.excercises, programType)} />)
+            return(<ExerciseList key={index} listType={programType} exerciseItems={this.getExerciseByType(this.exercises, programType)} />)
           })}
         </Grid.Row>
       </Grid>

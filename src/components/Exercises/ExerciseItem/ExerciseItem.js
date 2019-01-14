@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { List } from 'semantic-ui-react';
 
-export default class ExcerciseItem extends Component {
+export default class ExerciseItem extends Component {
   constructor(props) {
     super(props);
     
     this.state = {
-      name: props.excerciseName,
-      type: props.excerciseType,
-      category: props.excerciseCategory
+      name: props.exerciseName,
+      type: props.exerciseType,
+      category: props.exerciseCategory
     };
   }
 

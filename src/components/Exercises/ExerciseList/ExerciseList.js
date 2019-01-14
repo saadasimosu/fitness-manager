@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Grid, Segment, List, Image, Header } from 'semantic-ui-react';
 import { programTypeToColorMap, programTypeToLogoMap } from '../../../constants';
-import ExcerciseItem from '../ExcerciseItem/ExcerciseItem';
+import ExerciseItem from '../ExerciseItem/ExerciseItem';
 
-export default class ExcerciseList extends Component {
+export default class ExerciseList extends Component {
   constructor(props) {
     super(props);
     
     this.state = {
       listType: props.listType,
-      excerciseItems: props.excerciseItems
+      exerciseItems: props.exerciseItems
     };
   }
 
@@ -25,8 +25,8 @@ export default class ExcerciseList extends Component {
           
         
           <List divided selection textAlign='left'>
-            {this.state.excerciseItems.map((excerciseItem, index) => {
-              return(<ExcerciseItem key={index} excerciseName={excerciseItem.name} excerciseType={excerciseItem.type} excerciseCategory={excerciseItem.category} />)
+            {this.state.exerciseItems.map((exerciseItem, index) => {
+              return(<ExerciseItem key={index} exerciseName={exerciseItem.name} exerciseType={exerciseItem.type} exerciseCategory={exerciseItem.category} />)
             })}
           </List>
         </Segment>
