@@ -16,3 +16,10 @@ code {
 #root .image {
   background: none;
 }
+
+#root .add-program-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -27,6 +27,8 @@ export default class Programs extends Component {
   ];
 
   render() {
-    return (<ProgramGroup programDetails={this.programDetails} />);
+    return(
+      <ProgramGroup programDetails={this.programDetails} />
+    );
   }
 }

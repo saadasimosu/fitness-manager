@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { exerciseTypes } from '../../constants';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Container } from 'semantic-ui-react';
 import { programTypes } from '../../constants';
 import ExerciseList from './ExerciseList/ExerciseList';
 
@@ -53,13 +53,15 @@ export default class Exercises extends Component {
     const numColumns = Object.keys(exerciseTypes).length;
 
     return (
-      <Grid centered doubling stackable columns={numColumns}>
-        <Grid.Row>
-          {Object.values(programTypes).map((programType, index) => {
-            return(<ExerciseList key={index} listType={programType} exerciseItems={this.getExerciseByType(this.exercises, programType)} />)
-          })}
-        </Grid.Row>
-      </Grid>
+      <Container>
+        <Grid centered doubling stackable columns={numColumns}>
+          <Grid.Row>
+            {Object.values(programTypes).map((programType, index) => {
+              return(<ExerciseList key={index} listType={programType} exerciseItems={this.getExerciseByType(this.exercises, programType)} />)
+            })}
+          </Grid.Row>
+        </Grid>
+      </Container>
     );
   }
 }

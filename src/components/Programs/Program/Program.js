@@ -18,7 +18,7 @@ export default class Program extends Component {
 
     return (
       <Card color={programTypeToColorMap[type]}>
-        <Image src={programTypeToLogoMap[type]} size='small' centered />
+        <Image src={programTypeToLogoMap[type]} size='small' centered alt={type + '.svg'} />
         <Card.Content>
           <Card.Header>{name}</Card.Header>
           <Card.Description>{description}</Card.Description>

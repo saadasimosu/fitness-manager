@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Segment, List, Image, Header, Input } from 'semantic-ui-react';
+import { Grid, Segment, List, Image, Header, Input, Button } from 'semantic-ui-react';
 import { programTypeToColorMap, programTypeToLogoMap } from '../../../constants';
 import ExerciseItem from '../ExerciseItem/ExerciseItem';
 
@@ -65,15 +65,16 @@ export default class ExerciseList extends Component {
           <Image src={programTypeToLogoMap[listType]} size='small' centered />
         </Header>
         <Segment attached color={programTypeToColorMap[listType]}>
-            <Input
-              loading={isLoading}
-              icon='search'
-              fluid={true}
-              placeholder='Search...'
-              onChange={this.debounce(this.handleSearchChange, 100, false)}
-            />
+          <Input
+            loading={isLoading}
+            icon='search'
+            fluid={true}
+            placeholder='Search...'
+            onChange={this.debounce(this.handleSearchChange, 100, false)}
+          />
 
           <List divided selection textalign='left'>
+            <Button positive circular icon='add' className='add-button'/>
             {filteredExerciseItems.map(exerciseItem => {
               return(<ExerciseItem key={exerciseItem.name} exerciseName={exerciseItem.name} exerciseType={exerciseItem.type} exerciseCategory={exerciseItem.category} />)
             })}

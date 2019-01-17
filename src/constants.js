@@ -27,6 +27,6 @@ export const programTypeToLogoMap = {
 export const programTypeToColorMap = {
   [programTypes.CYCLING]: 'purple',
   [programTypes.LIFTING]: 'red',
-  [programTypes.RUNNING]: 'green',
+  [programTypes.RUNNING]: 'teal',
   [programTypes.SWIMMING]: 'blue'
 };
