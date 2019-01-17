@@ -17,8 +17,15 @@ code {
   background: none;
 }
 
+#root .add-button {
+  margin-bottom: 1em;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
 #root .add-program-container {
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
