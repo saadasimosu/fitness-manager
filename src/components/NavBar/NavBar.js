@@ -9,11 +9,11 @@ const navItems = [
   },
   {
     name: 'programs',
-    route: 'programs'
+    route: '/programs'
   },
   {
     name: 'exercises',
-    route: 'exercises'
+    route: '/exercises'
   }
 ]
 
@@ -31,11 +31,11 @@ export default class NavBar extends Component {
           return (
             <Menu.Item
               key={index}
-              as={Link}
               name={navItem.name}
-              to={navItem.route}
-              active={activeItem === navItem.name}
               onClick={this.handleItemClick}
+              active={activeItem === navItem.name}
+              as={Link}
+              to={navItem.route}
             />
           )
         })}
