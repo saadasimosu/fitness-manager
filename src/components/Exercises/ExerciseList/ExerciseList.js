@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Segment, List, Image, Header, Input, Button } from 'semantic-ui-react';
 import { programTypeToColorMap, programTypeToLogoMap } from '../../../constants';
 import ExerciseItem from '../ExerciseItem/ExerciseItem';
+import { Link } from 'react-router-dom';
 
 export default class ExerciseList extends Component {
   constructor(props) {
@@ -74,9 +75,23 @@ export default class ExerciseList extends Component {
           />
 
           <List divided selection textalign='left'>
-            <Button positive circular icon='add' className='add-button'/>
+            <div className='add-excercise-container'>
+            <Button positive circular 
+              icon='add' 
+              as={Link}
+              to={{ pathname: `${this.props.match.url}/new`, search: `?type=${this.state.listType}` }}
+            />
+            </div>
+
             {filteredExerciseItems.map(exerciseItem => {
-              return(<ExerciseItem key={exerciseItem.name} exerciseName={exerciseItem.name} exerciseType={exerciseItem.type} exerciseCategory={exerciseItem.category} />)
+              return(<ExerciseItem 
+                        key={exerciseItem.name} 
+                        exerciseName={exerciseItem.name} 
+                        exerciseType={exerciseItem.type} 
+                        exerciseCategory={exerciseItem.category} 
+                        match={this.props.match}
+                    />
+                    );
             })}
           </List>
         </Segment>

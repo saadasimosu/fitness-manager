@@ -10,8 +10,7 @@ export default class Program extends Component {
     this.state = {
       name: props.programName,
       type: props.programType,
-      description: props.programDescription,
-      match: props.match
+      description: props.programDescription
     }
   }
 
@@ -21,7 +20,7 @@ export default class Program extends Component {
     return (
       <Card 
         as={Link}
-        to={`${this.state.match.url}/${this.state.name}`}
+        to={`${this.props.match.url}/${this.state.name}`}
         color={programTypeToColorMap[type]}>
         <Image src={programTypeToLogoMap[type]} size='small' centered alt={type + '.svg'} />
         <Card.Content>

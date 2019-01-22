@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { List } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 export default class ExerciseItem extends Component {
   constructor(props) {
@@ -14,14 +15,17 @@ export default class ExerciseItem extends Component {
 
   render() {
     return(
-      <List.Item>
-      <List.Content>
-        <List.Header>{this.state.name}</List.Header>
-        <List.Description>
-          {this.state.category}
-        </List.Description>
-      </List.Content>
-    </List.Item>
+      <List.Item
+        as={Link}
+        to={`${this.props.match.url}/${this.state.name}`}
+      >
+        <List.Content>
+          <List.Header>{this.state.name}</List.Header>
+          <List.Description>
+            {this.state.category}
+          </List.Description>
+        </List.Content>
+      </List.Item>
     );
   }
 }
