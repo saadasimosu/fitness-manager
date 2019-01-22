@@ -32,7 +32,7 @@ const programDetails = [
 export default class Programs extends Component {
   constructor(props) {
     super(props);
-    
+    console.log(props);
     this.state = {
       programDetails: programDetails,
       match: props.match
@@ -44,7 +44,7 @@ export default class Programs extends Component {
       <Card.Group centered>
         <Card 
           as={Link}
-          to='/programs/new'
+          to={`${this.state.match.url}/new`}
         >
           <Image className='add-program-container'>
             <Icon name={addCardIcon} size='huge' color={addCardColor} />
@@ -52,7 +52,7 @@ export default class Programs extends Component {
         </Card>
         {this.state.programDetails.map((program, index) => {
           return (
-            <Program key={index} programName={program.name} programType={program.type} programDescription={program.description} />
+            <Program key={index} programName={program.name} programType={program.type} programDescription={program.description} match={this.state.match}/>
           )
         })}
       </Card.Group>
