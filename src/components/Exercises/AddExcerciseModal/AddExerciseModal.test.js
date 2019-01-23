@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ExerciseItem from './ExerciseItem';
+import AddExerciseModal from './AddExerciseModal';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<ExerciseItem />, div);
+  ReactDOM.render(<AddExerciseModal />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

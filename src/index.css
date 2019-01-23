@@ -17,9 +17,11 @@ code {
   background: none;
 }
 
-#root .add-excercise-container {
+#root .add-exercise-button {
   margin-bottom: 1em;
-  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
 }
 
 #root .add-program-container {
