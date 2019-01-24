@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { exerciseTypes } from '../../constants';
 import { Grid, Container } from 'semantic-ui-react';
 import { programTypes } from '../../constants';
 import ExerciseList from './ExerciseList/ExerciseList';
@@ -50,7 +49,7 @@ export default class Exercises extends Component {
   }
 
   render() {
-    const numColumns = Object.keys(exerciseTypes).length;
+    const numColumns = Object.keys(programTypes).length;
 
     return (
       <Container>

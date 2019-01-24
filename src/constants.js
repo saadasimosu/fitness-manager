@@ -10,13 +10,6 @@ export const programTypes = {
   SWIMMING: 'swimming'
 };
 
-export const exerciseTypes = {
-  LIFTS: 'Lifts',
-  BICYCLES: 'Bicycles',
-  RUNS: 'Runs',
-  SWIMS: 'Swims'
-};
-
 export const programTypeToLogoMap = {
   [programTypes.CYCLING]: cyclingLogo,
   [programTypes.LIFTING]: liftingLogo,

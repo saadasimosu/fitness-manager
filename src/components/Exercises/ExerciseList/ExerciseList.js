@@ -3,6 +3,7 @@ import { Grid, Segment, List, Image, Header, Input } from 'semantic-ui-react';
 import { programTypeToColorMap, programTypeToLogoMap } from '../../../constants';
 import ExerciseItem from '../ExerciseItem/ExerciseItem';
 import AddExerciseModal from '../AddExcerciseModal/AddExerciseModal';
+import { capitalize } from '../../../utils';
 
 export default class ExerciseList extends Component {
   constructor(props) {
@@ -61,7 +62,7 @@ export default class ExerciseList extends Component {
     return(
       <Grid.Column link>
         <Header as='h3' textAlign='center' attached='top'>
-          {listType[0].toUpperCase() + listType.slice(1)}
+          {capitalize(listType)}
           <br />
           <Image src={programTypeToLogoMap[listType]} size='small' centered />
         </Header>
@@ -75,7 +76,7 @@ export default class ExerciseList extends Component {
           />
 
           <List divided selection textalign='left'>
-            <AddExerciseModal />
+            <AddExerciseModal exerciseType={listType} />
 
             {filteredExerciseItems.map(exerciseItem => {
               return(<ExerciseItem 
