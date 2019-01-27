@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List } from 'semantic-ui-react';
+import { List, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 export default class ExerciseItem extends Component {
@@ -13,12 +13,17 @@ export default class ExerciseItem extends Component {
     };
   }
 
+  deleteExercise = e => {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+
   render() {
     return(
       <List.Item
-        as={Link}
-        to={`${this.props.match.url}/${this.state.name}`}
-      >
+      as={Link}
+      to={`${this.props.match.url}/${this.state.name}`}>
+        <Icon name='delete' color='gray' className='delete-exercise-icon' onClick={this.deleteExercise}/>
         <List.Content>
           <List.Header>{this.state.name}</List.Header>
           <List.Description>

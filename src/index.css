@@ -30,3 +30,11 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+#root .delete-exercise-icon {
+  float: right;
+}
+
+#root .delete-exercise-icon:hover {
+  color: #db2828;
+}

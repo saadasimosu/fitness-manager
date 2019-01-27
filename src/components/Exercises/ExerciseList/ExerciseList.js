@@ -60,7 +60,7 @@ export default class ExerciseList extends Component {
     const { listType, filteredExerciseItems, isLoading } = this.state;
 
     return(
-      <Grid.Column link>
+      <Grid.Column>
         <Header as='h3' textAlign='center' attached='top'>
           {capitalize(listType)}
           <br />
