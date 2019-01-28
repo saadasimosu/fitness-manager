@@ -1,15 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Modal, Button, Form, Dropdown, Input, TextArea } from 'semantic-ui-react';
-import { programTypes } from '../../../constants';
-import { capitalize } from '../../../utils';
-
-const exerciseTypeOptions = Object.values(programTypes).map(programType => {
-  const capitalizedProgramType = capitalize(programType);
-  return({
-    text: capitalizedProgramType,
-    value: capitalizedProgramType
-  });
-});
+import { programTypeOptions } from '../../../constants';
 
 const weightUnits = [
   { key: 'lb', text: 'lb', value: 'lb' },
@@ -48,29 +39,28 @@ export default class AddExerciseModal extends Component {
             <Form>
               <Form.Field required>
                 <label>Exercise Name</label>
-                <Input placeholder='Exercise Name' />
+                <Input />
               </Form.Field>
 
               <Form.Field required>
                 <label>Exercise Category</label>
-                <Input placeholder='Exercise Category' />
+                <Input />
               </Form.Field>
 
               <Form.Field required>
                 <label>Exercise Type</label>
-                <Dropdown placeholder='Select Exercise Type' fluid selection options={exerciseTypeOptions} defaultValue={capitalize(this.props.exerciseType)} />
+                <Dropdown fluid selection options={programTypeOptions} defaultValue={this.props.exerciseType} />
               </Form.Field>
 
               <Form.Field>
                 <label>Personal Record</label>
                 <Input 
-                  placeholder='135' 
                   action={<Dropdown button basic floating options={weightUnits} defaultValue='lb' />}/>
               </Form.Field>
 
               <Form.Field>
                 <label>YouTube Video</label>
-                <Input placeholder='Video Link' />
+                <Input />
               </Form.Field>
 
               <Form.Field>

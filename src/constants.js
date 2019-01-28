@@ -4,11 +4,18 @@ import runningLogo from './images/running.svg';
 import swimmingLogo from './images/swimming.svg';
 
 export const programTypes = {
-  LIFTING: 'lifting',
-  CYCLING: 'cycling',
-  RUNNING: 'running',
-  SWIMMING: 'swimming'
+  LIFTING: 'Lifting',
+  CYCLING: 'Cycling',
+  RUNNING: 'Running',
+  SWIMMING: 'Swimming'
 };
+
+export const programTypeOptions = Object.values(programTypes).map(programType => {
+  return({
+    text: programType,
+    value: programType
+  });
+});
 
 export const programTypeToLogoMap = {
   [programTypes.CYCLING]: cyclingLogo,
