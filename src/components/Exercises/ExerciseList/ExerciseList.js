@@ -16,43 +16,22 @@ export default class ExerciseList extends Component {
     };
   }
 
-  // Returns a function, that, as long as it continues to be invoked, will not
-  // be triggered. The function will be called after it stops being called for
-  // N milliseconds. If `immediate` is passed, trigger the function on the
-  // leading edge, instead of the trailing.
-  debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
-
   handleSearchChange = (e, { value }) => {
     this.setState({
       ...this.state,
       isLoading: true
     });
 
-    setTimeout(() => {
-      const regExp = new RegExp(value, 'i')
-      const filteredExerciseItems = this.state.exerciseItems.filter(exerciseItem => {
-        return regExp.test(exerciseItem.name);
-      });
-  
-      this.setState({
-        ...this.state,
-        filteredExerciseItems,
-        isLoading: false
-      });
-    }, 500);
+    const regExp = new RegExp(value, 'i')
+    const filteredExerciseItems = this.state.exerciseItems.filter(exerciseItem => {
+      return regExp.test(exerciseItem.name);
+    });
+
+    this.setState({
+      ...this.state,
+      filteredExerciseItems,
+      isLoading: false
+    });
   }
   
   render() {
@@ -71,7 +50,7 @@ export default class ExerciseList extends Component {
             icon='search'
             fluid={true}
             placeholder='Search...'
-            onChange={this.debounce(this.handleSearchChange, 100, false)}
+            onChange={this.handleSearchChange}
           />
 
           <List divided selection textalign='left'>
