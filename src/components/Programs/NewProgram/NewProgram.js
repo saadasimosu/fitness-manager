@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import NewProgramDetails from './NewProgramDetails/NewProgramDetails';
-import MultiStepFormButtons from './MultiStepFormButtons/MultiStepFormButtons';
 import { Divider } from 'semantic-ui-react';
+import NewProgramDetails from './NewProgramDetails/NewProgramDetails';
+import NewProgramExerciseEntry from './NewProgramExerciseEntry/NewProgramExerciseEntry';
+import MultiStepFormButtons from './MultiStepFormButtons/MultiStepFormButtons';
 
 export default class NewProgram extends Component {
   constructor(props) {
@@ -21,6 +22,12 @@ export default class NewProgram extends Component {
     this.setState( { [input] : event.target.value });
   }
 
+  changeStep = (newStep) => {
+    this.setState({ 
+      step: newStep
+    });
+  }
+
   render() {
     const { step, formValues } = this.state;
     let currentForm;
@@ -34,7 +41,7 @@ export default class NewProgram extends Component {
                       />
         break;
       case 2:
-        currentForm = <div></div>
+        currentForm = <NewProgramExerciseEntry />
         break;
     }
 
@@ -42,7 +49,7 @@ export default class NewProgram extends Component {
       <Fragment>
         {currentForm}
         <Divider hidden />
-        <MultiStepFormButtons numSteps={2} currentStep={step} />
+        <MultiStepFormButtons numSteps={2} currentStep={step} changeStep={this.changeStep} />
       </Fragment>
     );
 

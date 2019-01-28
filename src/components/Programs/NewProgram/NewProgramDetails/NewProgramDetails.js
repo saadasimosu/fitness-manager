@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Input, Dropdown, Container, Button, Icon } from 'semantic-ui-react';
+import { Form, Input, Dropdown, Container } from 'semantic-ui-react';
 import { programTypeOptions } from '../../../../constants';
 
 export default class NewProgramDetails extends Component {
