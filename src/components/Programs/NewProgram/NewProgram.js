@@ -9,7 +9,7 @@ export default class NewProgram extends Component {
     super(props); 
 
     this.state = {
-      step: 1,
+      step: 2,
       formValues: {
         programName: '',
         programType: '',

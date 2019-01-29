@@ -38,3 +38,23 @@ code {
 #root .delete-exercise-icon:hover {
   color: #db2828;
 }
+
+@media only screen and (min-width: 1200px) {
+  #root .ui.container {
+    width: 1400px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #root .ui.grid.container {
+    width: calc( 1127px  +  2rem ) !important;
+  }
+
+  #root .ui.relaxed.grid.container {
+    width: calc( 1127px  +  3rem ) !important;
+  }
+
+  #root .ui.very.relaxed.grid.container {
+    width: calc( 1127px  +  5rem ) !important;
+  }
+}
